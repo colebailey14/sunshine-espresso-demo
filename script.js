@@ -9,7 +9,7 @@ function updateCartLink() {
 }
 
 // Add item to cart
-function addToCart(name, price, qty) {
+function addToCart(name, price, qty, button) {
   const existingItem = cart.find(item => item.name === name);
   if (existingItem) {
     existingItem.qty += qty;
@@ -18,6 +18,10 @@ function addToCart(name, price, qty) {
   }
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartLink();
+
+  // Show temporary notification
+  button.classList.add('added');
+  setTimeout(() => { button.classList.remove('added'); }, 1500);
 }
 
 // Attach click event to all Add to Cart buttons
@@ -27,10 +31,7 @@ document.querySelectorAll('.add-cart-btn').forEach(button => {
     const price = parseFloat(button.dataset.price);
     const qtyInput = button.parentElement.querySelector('.qty-input');
     const qty = parseInt(qtyInput.value) || 1;
-    addToCart(name, price, qty);
-    // Optional: temporary notification instead of alert
-    button.textContent = "Added!";
-    setTimeout(() => { button.textContent = `Add to Cart - $${price}`; }, 1000);
+    addToCart(name, price, qty, button);
   });
 });
 
