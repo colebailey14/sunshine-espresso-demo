@@ -24,40 +24,52 @@
 </section>
 
 <script>
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  function updateCartCounter() {
-    const cartLink = document.getElementById("cart-link");
-    if (cartLink) {
-      cartLink.textContent = `Cart (${cart.length})`;
-    }
+function updateCartCounter() {
+  const cartLink = document.getElementById("cart-link");
+  if (cartLink) {
+    cartLink.textContent = `Cart (${cart.length})`;
   }
+}
 
-  function renderCart() {
-    const cartItems = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
-    cartItems.innerHTML = "";
-    let total = 0;
-    cart.forEach((item, index) => {
-      total += item.price;
-      const li = document.createElement("li");
-      li.textContent = `${item.item} - $${item.price}`;
-      cartItems.appendChild(li);
-    });
-    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
-  }
+function renderCart() {
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  cartItems.innerHTML = "";
+  let total = 0;
+  cart.forEach((item, index) => {
+    total += item.price;
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <img src="${item.img}" alt="${item.name}" style="width:60px; vertical-align:middle; border-radius:8px; margin-right:10px;">
+      ${item.name} - $${item.price.toFixed(2)}
+      <button onclick="removeItem(${index})" style="margin-left:10px;">Remove</button>
+    `;
+    cartItems.appendChild(li);
+  });
+  cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+}
 
-  function checkout() {
-    alert("Checkout complete! (Demo only)");
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
-    updateCartCounter();
-  }
-
-  updateCartCounter();
+function removeItem(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
+  updateCartCounter();
+}
+
+function checkout() {
+  alert("Checkout complete! (Demo only)");
+  cart = [];
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+  updateCartCounter();
+}
+
+updateCartCounter();
+renderCart();
 </script>
+
 
 </body>
 </html>
