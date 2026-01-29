@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sunshine Espresso Demo</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,9 +19,10 @@
 </header>
 
 <section id="hero">
-  <h2>Welcome to Sunshine Espresso</h2>
-  <p>Your local surf-inspired coffee shop (Portfolio Demo)</p>
-  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?crop=entropy&cs=tinysrgb&fit=max&w=1200&q=80" alt="Beach Coffee" class="hero-img">
+  <div class="hero-overlay">
+    <h2>Welcome to Sunshine Espresso</h2>
+    <p>Your local surf-inspired coffee shop (Portfolio Demo)</p>
+  </div>
 </section>
 
 <section id="menu">
@@ -29,61 +32,91 @@
     <div class="menu-item">
       <h3>Espresso</h3>
       <p class="description">Rich and bold shot of espresso made from freshly ground beans.</p>
-      <button class="add-cart-btn" data-name="Espresso" data-price="3">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Espresso" data-price="3">Add to Cart - $3</button>
+      </div>
     </div>
 
     <div class="menu-item">
       <h3>Cappuccino</h3>
       <p class="description">Classic cappuccino with creamy milk foam and a shot of espresso.</p>
-      <button class="add-cart-btn" data-name="Cappuccino" data-price="4">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Cappuccino" data-price="4">Add to Cart - $4</button>
+      </div>
     </div>
 
     <div class="menu-item">
       <h3>Latte</h3>
       <p class="description">Smooth and velvety latte with steamed milk and espresso.</p>
-      <button class="add-cart-btn" data-name="Latte" data-price="4">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Latte" data-price="4">Add to Cart - $4</button>
+      </div>
     </div>
 
     <div class="menu-item">
       <h3>Mocha</h3>
       <p class="description">Espresso with chocolate syrup and steamed milk, topped with whipped cream.</p>
-      <button class="add-cart-btn" data-name="Mocha" data-price="5">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Mocha" data-price="5">Add to Cart - $5</button>
+      </div>
     </div>
 
     <div class="menu-item">
       <h3>Americano</h3>
       <p class="description">Espresso diluted with hot water for a smooth, rich coffee.</p>
-      <button class="add-cart-btn" data-name="Americano" data-price="3">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Americano" data-price="3">Add to Cart - $3</button>
+      </div>
     </div>
 
     <div class="menu-item">
       <h3>Flat White</h3>
       <p class="description">Espresso with velvety steamed milk, creamy and smooth.</p>
-      <button class="add-cart-btn" data-name="Flat White" data-price="4">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Flat White" data-price="4">Add to Cart - $4</button>
+      </div>
     </div>
 
     <div class="menu-item">
       <h3>Macchiato</h3>
       <p class="description">Espresso with a small amount of frothy milk on top.</p>
-      <button class="add-cart-btn" data-name="Macchiato" data-price="3">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Macchiato" data-price="3">Add to Cart - $3</button>
+      </div>
     </div>
 
     <div class="menu-item">
       <h3>Iced Latte</h3>
       <p class="description">Chilled espresso with milk and ice for a refreshing coffee.</p>
-      <button class="add-cart-btn" data-name="Iced Latte" data-price="4">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Iced Latte" data-price="4">Add to Cart - $4</button>
+      </div>
     </div>
 
     <div class="menu-item">
       <h3>Iced Mocha</h3>
       <p class="description">Espresso with chocolate syrup, milk, and ice, topped with whipped cream.</p>
-      <button class="add-cart-btn" data-name="Iced Mocha" data-price="5">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Iced Mocha" data-price="5">Add to Cart - $5</button>
+      </div>
     </div>
 
     <div class="menu-item">
       <h3>Chai Latte</h3>
       <p class="description">Spiced tea with steamed milk for a warm, aromatic drink.</p>
-      <button class="add-cart-btn" data-name="Chai Latte" data-price="4">Add to Cart</button>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Chai Latte" data-price="4">Add to Cart - $4</button>
+      </div>
     </div>
 
   </div>
@@ -98,7 +131,9 @@
 </section>
 
 <footer>
-  <p>&copy; 2026 Sunshine Espresso Demo</p>
+  <p>&copy; 2026 Sunshine Espresso Demo | 
+    <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Portfolio</a>
+  </p>
 </footer>
 
 <script src="script.js"></script>
