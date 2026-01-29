@@ -1,33 +1,24 @@
-const orderForm = document.getElementById("orderForm");
-const orderMessage = document.getElementById("orderMessage");
+let cart = [];
 
-let orders = []; // Store multiple orders
+function addToCart(item, price) {
+  cart.push({ item, price });
+  renderCart();
+}
 
-orderForm.addEventListener("submit", function(e) {
-  e.preventDefault();
+function renderCart() {
+  const cartEl = document.getElementById('cart');
+  const totalEl = document.getElementById('cartTotal');
 
-  const name = document.getElementById("name").value;
-  const item = document.getElementById("item").value;
-  const quantity = document.getElementById("quantity").value;
+  cartEl.innerHTML = '';
+  let total = 0;
 
-  const order = { name, item, quantity };
-  orders.push(order);
-
-  let summary = "<h4>Order Summary (Demo Only)</h4><ul>";
-  orders.forEach(o => {
-    summary += `<li>${o.name} ordered ${o.quantity} x ${o.item}</li>`;
+  cart.forEach((order, index) => {
+    total += order.price;
+    const li = document.createElement('li');
+    li.textContent = `${order.item} - $${order.price}`;
+    cartEl.appendChild(li);
   });
-  summary += "</ul>";
 
-  orderMessage.innerHTML = summary;
+  totalEl.textContent = `Total: $${total.toFixed(2)}`;
+}
 
-  orderForm.reset();
-});
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
