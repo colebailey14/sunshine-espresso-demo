@@ -1,29 +1,36 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+// Get cart from localStorage or create new
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-function updateCartCounter() {
-  const cartLink = document.getElementById("cart-link");
-  if (cartLink) {
-    cartLink.textContent = `Cart (${cart.length})`;
+// Update cart counter in header
+function updateCartLink() {
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  const cartLink = document.getElementById('cart-link');
+  cartLink.textContent = `Cart (${totalQty})`;
+}
+
+// Add item to cart
+function addToCart(name, price) {
+  // Check if item already in cart
+  const existingItem = cart.find(item => item.name === name);
+  if (existingItem) {
+    existingItem.qty += 1;
+  } else {
+    cart.push({ name: name, price: price, qty: 1 });
   }
+  // Save to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartLink();
 }
 
-function addToCart(item) {
-  cart.push(item);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCounter();
-  alert(`${item.name} added to cart!`);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  updateCartCounter();
-  const buttons = document.querySelectorAll(".add-cart-btn");
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const item = {
-        name: btn.getAttribute("data-name"),
-        price: parseFloat(btn.getAttribute("data-price"))
-      };
-      addToCart(item);
-    });
+// Attach click event to all Add to Cart buttons
+document.querySelectorAll('.add-cart-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const name = button.dataset.name;
+    const price = parseFloat(button.dataset.price);
+    addToCart(name, price);
+    alert(`${name} added to cart!`);
   });
 });
+
+// Initialize cart counter on page load
+updateCartLink();
