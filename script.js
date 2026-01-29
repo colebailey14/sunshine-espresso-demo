@@ -9,15 +9,13 @@ function updateCartLink() {
 }
 
 // Add item to cart
-function addToCart(name, price) {
-  // Check if item already in cart
+function addToCart(name, price, qty) {
   const existingItem = cart.find(item => item.name === name);
   if (existingItem) {
-    existingItem.qty += 1;
+    existingItem.qty += qty;
   } else {
-    cart.push({ name: name, price: price, qty: 1 });
+    cart.push({ name: name, price: price, qty: qty });
   }
-  // Save to localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartLink();
 }
@@ -27,8 +25,12 @@ document.querySelectorAll('.add-cart-btn').forEach(button => {
   button.addEventListener('click', () => {
     const name = button.dataset.name;
     const price = parseFloat(button.dataset.price);
-    addToCart(name, price);
-    alert(`${name} added to cart!`);
+    const qtyInput = button.parentElement.querySelector('.qty-input');
+    const qty = parseInt(qtyInput.value) || 1;
+    addToCart(name, price, qty);
+    // Optional: temporary notification instead of alert
+    button.textContent = "Added!";
+    setTimeout(() => { button.textContent = `Add to Cart - $${price}`; }, 1000);
   });
 });
 
