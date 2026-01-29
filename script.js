@@ -1,24 +1,20 @@
-let cart = [];
+// Load cart from localStorage or start empty
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+// Update cart counter in nav
+function updateCartCounter() {
+  const cartLink = document.getElementById("cart-link");
+  if (cartLink) {
+    cartLink.textContent = `Cart (${cart.length})`;
+  }
+}
+
+// Add item to cart
 function addToCart(item, price) {
   cart.push({ item, price });
-  renderCart();
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCounter();
 }
 
-function renderCart() {
-  const cartEl = document.getElementById('cart');
-  const totalEl = document.getElementById('cartTotal');
-
-  cartEl.innerHTML = '';
-  let total = 0;
-
-  cart.forEach((order, index) => {
-    total += order.price;
-    const li = document.createElement('li');
-    li.textContent = `${order.item} - $${order.price}`;
-    cartEl.appendChild(li);
-  });
-
-  totalEl.textContent = `Total: $${total.toFixed(2)}`;
-}
-
+// Initialize cart count on page load
+updateCartCounter();
