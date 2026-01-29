@@ -8,16 +8,15 @@
 </head>
 <body>
 
-  <header>
-    <h1>Sunshine Espresso</h1>
-    <nav>
-      <a href="#menu">Menu</a>
-      <a href="#order">Order</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Sunshine Espresso</h1>
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="cart.html" id="cart-link">Cart (0)</a>
+  </nav>
+</header>
 
-  <section id="hero">
+<section id="hero">
   <h2>Welcome to Sunshine Espresso</h2>
   <p>Your local surf-inspired coffee shop (Portfolio Demo)</p>
   <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Beach Coffee" style="max-width:100%; border-radius:12px; margin-top:20px;">
@@ -26,63 +25,46 @@
 <section id="menu">
   <h2>Our Menu</h2>
   <div class="menu-cards">
-    <div class="card" onclick="addToCart('Espresso', 3)">
+    <div class="card">
       <img src="https://images.unsplash.com/photo-1601924576091-0c4ff2b8134b?auto=format&fit=crop&w=200&q=80" alt="Espresso">
       <h3>Espresso</h3>
       <p>$3</p>
+      <button onclick="addToCart('Espresso', 3)">Add to Cart</button>
     </div>
-    <div class="card" onclick="addToCart('Cappuccino', 4)">
+    <div class="card">
       <img src="https://images.unsplash.com/photo-1601924582975-cdff4ee4f6a2?auto=format&fit=crop&w=200&q=80" alt="Cappuccino">
       <h3>Cappuccino</h3>
       <p>$4</p>
+      <button onclick="addToCart('Cappuccino', 4)">Add to Cart</button>
     </div>
-    <div class="card" onclick="addToCart('Latte', 4)">
+    <div class="card">
       <img src="https://images.unsplash.com/photo-1567179573827-8c5465d0d77a?auto=format&fit=crop&w=200&q=80" alt="Latte">
       <h3>Latte</h3>
       <p>$4</p>
+      <button onclick="addToCart('Latte', 4)">Add to Cart</button>
     </div>
-    <div class="card" onclick="addToCart('Pastry', 2)">
+    <div class="card">
       <img src="https://images.unsplash.com/photo-1565958011706-44ef1978b16e?auto=format&fit=crop&w=200&q=80" alt="Pastry">
       <h3>Pastry</h3>
       <p>$2</p>
+      <button onclick="addToCart('Pastry', 2)">Add to Cart</button>
     </div>
   </div>
-  <h3>Your Cart (Demo)</h3>
-  <ul id="cart"></ul>
-  <p id="cartTotal"></p>
 </section>
 
-
-  </section>
-
-  <section id="order">
-    <h2>Mobile Ordering Demo</h2>
-    <form id="orderForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="text" id="item" placeholder="Item to Order" required>
-      <input type="number" id="quantity" placeholder="Quantity" min="1" required>
-      <button type="submit">Place Order</button>
-    </form>
-    <div id="orderMessage"></div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: demo@sunshineespresso.com</p>
-    <p>Phone: (123) 456-7890</p>
-  </section>
-
-  <footer>
-    <p>Portfolio Demo &copy; 2026</p>
-    <footer>
-  <p>Portfolio Demo &copy; 2026</p>
+<section id="about">
+  <h2>About Us</h2>
   <p>
-    <a href="#">Instagram</a> | 
-    <a href="#">Facebook</a> | 
-    <a href="#">Twitter</a>
+    Sunshine Espresso is your local surf-inspired coffee shop. We specialize in freshly brewed espresso, lattes, cappuccinos, and a selection of pastries.  
+    This portfolio demo showcases a modern, interactive coffee shop website built with HTML, CSS, and JavaScript.
   </p>
-  </footer>
+</section>
 
-  <script src="script.js"></script>
+<footer>
+  <p>&copy; 2026 Sunshine Espresso Demo</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
+
