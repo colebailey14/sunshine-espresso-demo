@@ -35,11 +35,12 @@ nav a:hover {
 }
 
 /* Hero */
-#hero {
-  background-color: #ffd58c;
-  text-align: center;
-  padding: 60px 20px;
+.hero-img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
 }
+
 
 /* Menu List */
 .menu-list {
