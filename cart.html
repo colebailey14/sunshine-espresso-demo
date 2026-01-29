@@ -41,21 +41,21 @@ function renderCart() {
   cart.forEach((item, index) => {
     total += item.price;
     const li = document.createElement("li");
-    li.innerHTML = `
-      <img src="${item.img}" alt="${item.name}" style="width:60px; vertical-align:middle; border-radius:8px; margin-right:10px;">
-      ${item.name} - $${item.price.toFixed(2)}
-      <button onclick="removeItem(${index})" style="margin-left:10px;">Remove</button>
-    `;
+    li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    // Optional remove button
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.style.marginLeft = "10px";
+    removeBtn.onclick = () => {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+      updateCartCounter();
+    };
+    li.appendChild(removeBtn);
     cartItems.appendChild(li);
   });
   cartTotal.textContent = `Total: $${total.toFixed(2)}`;
-}
-
-function removeItem(index) {
-  cart.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart();
-  updateCartCounter();
 }
 
 function checkout() {
@@ -69,7 +69,6 @@ function checkout() {
 updateCartCounter();
 renderCart();
 </script>
-
 
 </body>
 </html>
