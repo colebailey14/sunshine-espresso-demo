@@ -81,9 +81,10 @@ nav a:hover {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
+/* Menu Item without images */
 .menu-item {
   background-color: #fff;
   border-radius: 12px;
@@ -94,16 +95,9 @@ nav a:hover {
 }
 
 .menu-item h3 {
-  margin: 10px 0 5px 0;
+  margin: 0 0 5px 0;
   font-size: 1.4em;
   color: #4fb6c3;
-}
-
-.menu-img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
 }
 
 .description {
@@ -112,6 +106,7 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
+/* Add to Cart Section */
 .add-cart-section {
   display: flex;
   gap: 10px;
@@ -140,7 +135,6 @@ nav a:hover {
   background-color: #38a0ad;
 }
 
-/* Added-to-cart notification */
 .add-cart-section button.added::after {
   content: "✓ Added";
   color: #fff;
