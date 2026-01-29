@@ -34,13 +34,6 @@ nav a {
   padding: 40px 20px;
 }
 
-.hero-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-top: 20px;
-}
-
 /* Menu */
 .menu-list {
   margin: 20px auto;
@@ -53,12 +46,6 @@ nav a {
 .menu-item h3 {
   margin-bottom: 10px;
   font-size: 1.5em;
-}
-
-.menu-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
 }
 
 .description {
@@ -74,7 +61,6 @@ nav a {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
 .menu-item button:hover {
