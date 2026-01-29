@@ -22,30 +22,35 @@
     <p>A conceptual redesign for portfolio purposes. Not affiliated with the company.</p>
   </section>
 
-  <section id="menu">
-    <h2>Our Menu</h2>
-    <div class="menu-cards">
-  <div class="card">
-    <img src="https://via.placeholder.com/150" alt="Espresso">
-    <h3>Espresso</h3>
-    <p>$3</p>
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="menu-cards">
+    <div class="card" onclick="addToCart('Espresso', 3)">
+      <img src="https://images.unsplash.com/photo-1601924576091-0c4ff2b8134b?auto=format&fit=crop&w=200&q=80" alt="Espresso">
+      <h3>Espresso</h3>
+      <p>$3</p>
+    </div>
+    <div class="card" onclick="addToCart('Cappuccino', 4)">
+      <img src="https://images.unsplash.com/photo-1601924582975-cdff4ee4f6a2?auto=format&fit=crop&w=200&q=80" alt="Cappuccino">
+      <h3>Cappuccino</h3>
+      <p>$4</p>
+    </div>
+    <div class="card" onclick="addToCart('Latte', 4)">
+      <img src="https://images.unsplash.com/photo-1567179573827-8c5465d0d77a?auto=format&fit=crop&w=200&q=80" alt="Latte">
+      <h3>Latte</h3>
+      <p>$4</p>
+    </div>
+    <div class="card" onclick="addToCart('Pastry', 2)">
+      <img src="https://images.unsplash.com/photo-1565958011706-44ef1978b16e?auto=format&fit=crop&w=200&q=80" alt="Pastry">
+      <h3>Pastry</h3>
+      <p>$2</p>
+    </div>
   </div>
-  <div class="card">
-    <img src="https://via.placeholder.com/150" alt="Cappuccino">
-    <h3>Cappuccino</h3>
-    <p>$4</p>
-  </div>
-  <div class="card">
-    <img src="https://via.placeholder.com/150" alt="Latte">
-    <h3>Latte</h3>
-    <p>$4</p>
-  </div>
-  <div class="card">
-    <img src="https://via.placeholder.com/150" alt="Pastries">
-    <h3>Pastries</h3>
-    <p>$2</p>
-  </div>
-</div>
+  <h3>Your Cart (Demo)</h3>
+  <ul id="cart"></ul>
+  <p id="cartTotal"></p>
+</section>
+
 
   </section>
 
