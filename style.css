@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: #fef6e4;
   color: #333;
+  text-align: center;
 }
 
 /* Header */
@@ -27,22 +28,23 @@ nav a {
   font-weight: bold;
 }
 
-/* Hero Section */
+/* Hero */
 #hero {
   background-color: #ffd58c;
-  text-align: center;
   padding: 40px 20px;
 }
 
 .hero-img {
   max-width: 100%;
+  height: auto;
   border-radius: 12px;
   margin-top: 20px;
 }
 
-/* Menu List */
+/* Menu */
 .menu-list {
-  margin: 20px;
+  margin: 20px auto;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -55,7 +57,7 @@ nav a {
 
 .menu-item img {
   width: 100%;
-  max-width: 400px;
+  height: auto;
   border-radius: 12px;
 }
 
@@ -66,12 +68,13 @@ nav a {
 }
 
 .menu-item button {
-  padding: 10px 15px;
+  padding: 10px 20px;
   background-color: #4fb6c3;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .menu-item button:hover {
