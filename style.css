@@ -3,20 +3,19 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fef6e4; /* light sand */
+  background-color: #fef6e4;
   color: #333;
 }
 
 /* Header */
 header {
-  background-color: #4fb6c3; /* ocean blue */
+  background-color: #4fb6c3;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 1000;
   color: #fff;
 }
 
@@ -35,53 +34,51 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* Hero */
 #hero {
-  background-color: #ffd58c; /* sunny beach */
+  background-color: #ffd58c;
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 
-#hero img {
-  max-width: 100%;
-  border-radius: 12px;
-  margin-top: 20px;
+/* Menu List */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 20px;
 }
 
-/* Menu Section */
-#menu {
-  padding: 40px 20px;
-}
-
-.menu-cards {
+.menu-item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
 }
 
-.card {
-  background: #fff7f0;
+.menu-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   border-radius: 12px;
-  padding: 15px;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  margin-right: 20px;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.menu-info {
+  flex: 1;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 10px;
+.menu-info h3 {
+  margin: 0 0 5px 0;
 }
 
-.card button {
-  margin-top: 10px;
+.menu-info p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.menu-item button {
   padding: 8px 12px;
   background-color: #4fb6c3;
   color: #fff;
@@ -90,22 +87,15 @@ nav a:hover {
   cursor: pointer;
 }
 
-.card button:hover {
+.menu-item button:hover {
   background-color: #38a0ad;
 }
 
-/* About Section */
+/* About */
 #about {
   padding: 40px 20px;
   background-color: #f9f3e7;
   text-align: center;
-  line-height: 1.6;
-}
-
-#about h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
-  color: #f2b632;
 }
 
 /* Footer */
