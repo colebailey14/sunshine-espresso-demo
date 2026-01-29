@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunshine Espresso Cart</title>
+  <title>Sunshine Espresso Demo</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,16 +12,121 @@
 <header>
   <h1>Sunshine Espresso</h1>
   <nav>
-    <a href="index.html">Menu</a>
+    <a href="#menu">Menu</a>
     <a href="cart.html" id="cart-link">Cart (0)</a>
   </nav>
 </header>
 
-<section id="cart">
-  <h2>Your Cart</h2>
-  <div class="cart-items"></div>
-  <h3 id="total">Total: $0</h3>
-  <button id="checkout-btn">Checkout</button>
+<section id="hero">
+  <div class="hero-overlay">
+    <h2>Welcome to Sunshine Espresso</h2>
+    <p>Your local surf-inspired coffee shop (Portfolio Demo)</p>
+  </div>
+</section>
+
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="menu-list">
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1608889179751-f0ecbcfb4174?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Espresso" class="menu-img">
+      <h3>Espresso</h3>
+      <p class="description">Rich and bold shot of espresso made from freshly ground beans.</p>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Espresso" data-price="3">Add to Cart - $3</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1560520032-4c0f1d9ed1d3?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Cappuccino" class="menu-img">
+      <h3>Cappuccino</h3>
+      <p class="description">Classic cappuccino with creamy milk foam and a shot of espresso.</p>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Cappuccino" data-price="4">Add to Cart - $4</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1582719478176-91b15e0d26ef?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Latte" class="menu-img">
+      <h3>Latte</h3>
+      <p class="description">Smooth and velvety latte with steamed milk and espresso.</p>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Latte" data-price="4">Add to Cart - $4</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1563805042-7684d8a87f3b?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Mocha" class="menu-img">
+      <h3>Mocha</h3>
+      <p class="description">Espresso with chocolate syrup and steamed milk, topped with whipped cream.</p>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Mocha" data-price="5">Add to Cart - $5</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1588678584056-1f6d94a6380f?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Americano" class="menu-img">
+      <h3>Americano</h3>
+      <p class="description">Espresso diluted with hot water for a smooth, rich coffee.</p>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Americano" data-price="3">Add to Cart - $3</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1590080878464-bc99803f18c2?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Flat White" class="menu-img">
+      <h3>Flat White</h3>
+      <p class="description">Espresso with velvety steamed milk, creamy and smooth.</p>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Flat White" data-price="4">Add to Cart - $4</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Macchiato" class="menu-img">
+      <h3>Macchiato</h3>
+      <p class="description">Espresso with a small amount of frothy milk on top.</p>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Macchiato" data-price="3">Add to Cart - $3</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1561055657-7f3c9ccde3f4?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Iced Latte" class="menu-img">
+      <h3>Iced Latte</h3>
+      <p class="description">Chilled espresso with milk and ice for a refreshing coffee.</p>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Iced Latte" data-price="4">Add to Cart - $4</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1560793764-9646f7e1d7cf?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Chai Latte" class="menu-img">
+      <h3>Chai Latte</h3>
+      <p class="description">Spiced tea with steamed milk for a warm, aromatic drink.</p>
+      <div class="add-cart-section">
+        <input type="number" class="qty-input" min="1" value="1">
+        <button class="add-cart-btn" data-name="Chai Latte" data-price="4">Add to Cart - $4</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    Sunshine Espresso is your local surf-inspired coffee shop. We specialize in freshly brewed espresso, lattes, cappuccinos, and a variety of specialty drinks.  
+    This portfolio demo showcases a modern, interactive coffee shop website built with HTML, CSS, and JavaScript.
+  </p>
 </section>
 
 <footer>
@@ -30,81 +135,6 @@
   </p>
 </footer>
 
-<script>
-// Get cart from localStorage or create new
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-// Elements
-const cartItemsDiv = document.querySelector('.cart-items');
-const totalEl = document.getElementById('total');
-const cartLink = document.getElementById('cart-link');
-
-// Update cart link count
-function updateCartLink() {
-  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-  cartLink.textContent = `Cart (${totalQty})`;
-}
-
-// Render cart items
-function renderCart() {
-  cartItemsDiv.innerHTML = '';
-  let totalPrice = 0;
-
-  cart.forEach((item, index) => {
-    totalPrice += item.price * item.qty;
-
-    const itemDiv = document.createElement('div');
-    itemDiv.className = 'cart-item';
-
-    itemDiv.innerHTML = `
-      <span class="cart-name">${item.name}</span>
-      <span class="cart-qty">Qty: <input type="number" min="1" value="${item.qty}" data-index="${index}" class="qty-input"></span>
-      <span class="cart-price">$${(item.price * item.qty).toFixed(2)}</span>
-      <button class="remove-btn" data-index="${index}">Remove</button>
-    `;
-
-    cartItemsDiv.appendChild(itemDiv);
-  });
-
-  totalEl.textContent = `Total: $${totalPrice.toFixed(2)}`;
-  updateCartLink();
-}
-
-// Handle quantity change
-cartItemsDiv.addEventListener('input', (e) => {
-  if (e.target.classList.contains('qty-input')) {
-    const index = e.target.dataset.index;
-    cart[index].qty = parseInt(e.target.value);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    renderCart();
-  }
-});
-
-// Handle remove button
-cartItemsDiv.addEventListener('click', (e) => {
-  if (e.target.classList.contains('remove-btn')) {
-    const index = e.target.dataset.index;
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    renderCart();
-  }
-});
-
-// Checkout button (demo only)
-document.getElementById('checkout-btn').addEventListener('click', () => {
-  if (cart.length === 0) {
-    alert("Your cart is empty!");
-    return;
-  }
-  alert("Thank you for your order! (Demo checkout)");
-  cart = [];
-  localStorage.setItem('cart', JSON.stringify(cart));
-  renderCart();
-});
-
-// Initial render
-renderCart();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
