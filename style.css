@@ -135,3 +135,16 @@ footer {
 #checkout-btn:hover {
   background-color: #38a0ad;
 }
+
+#hero {
+  background-color: #ffd58c;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 20px;
+}
