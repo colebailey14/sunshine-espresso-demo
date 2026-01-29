@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart - Sunshine Espresso Demo</title>
+  <title>Sunshine Espresso Cart</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,57 +16,90 @@
   </nav>
 </header>
 
-<section id="cart-page">
+<section id="cart">
   <h2>Your Cart</h2>
-  <ul id="cart-items"></ul>
-  <p id="cart-total"></p>
-  <button onclick="checkout()">Checkout (Demo)</button>
+  <div class="cart-items"></div>
+  <h3 id="total">Total: $0</h3>
+  <button id="checkout-btn">Checkout</button>
 </section>
 
+<footer>
+  <p>&copy; 2026 Sunshine Espresso Demo</p>
+</footer>
+
 <script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+// Get cart from localStorage or create new
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-function updateCartCounter() {
-  const cartLink = document.getElementById("cart-link");
-  if (cartLink) {
-    cartLink.textContent = `Cart (${cart.length})`;
-  }
+// Elements
+const cartItemsDiv = document.querySelector('.cart-items');
+const totalEl = document.getElementById('total');
+const cartLink = document.getElementById('cart-link');
+
+// Update cart link count
+function updateCartLink() {
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  cartLink.textContent = `Cart (${totalQty})`;
 }
 
+// Render cart items
 function renderCart() {
-  const cartItems = document.getElementById("cart-items");
-  const cartTotal = document.getElementById("cart-total");
-  cartItems.innerHTML = "";
-  let total = 0;
+  cartItemsDiv.innerHTML = '';
+  let totalPrice = 0;
+
   cart.forEach((item, index) => {
-    total += item.price;
-    const li = document.createElement("li");
-    li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-    // Optional remove button
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
-    removeBtn.style.marginLeft = "10px";
-    removeBtn.onclick = () => {
-      cart.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      renderCart();
-      updateCartCounter();
-    };
-    li.appendChild(removeBtn);
-    cartItems.appendChild(li);
+    totalPrice += item.price * item.qty;
+
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'cart-item';
+
+    itemDiv.innerHTML = `
+      <span class="cart-name">${item.name}</span>
+      <span class="cart-qty">Qty: <input type="number" min="1" value="${item.qty}" data-index="${index}" class="qty-input"></span>
+      <span class="cart-price">$${(item.price * item.qty).toFixed(2)}</span>
+      <button class="remove-btn" data-index="${index}">Remove</button>
+    `;
+
+    cartItemsDiv.appendChild(itemDiv);
   });
-  cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+
+  totalEl.textContent = `Total: $${totalPrice.toFixed(2)}`;
+  updateCartLink();
 }
 
-function checkout() {
-  alert("Checkout complete! (Demo only)");
+// Handle quantity change
+cartItemsDiv.addEventListener('input', (e) => {
+  if (e.target.classList.contains('qty-input')) {
+    const index = e.target.dataset.index;
+    cart[index].qty = parseInt(e.target.value);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  }
+});
+
+// Handle remove button
+cartItemsDiv.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove-btn')) {
+    const index = e.target.dataset.index;
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  }
+});
+
+// Checkout button (just clears cart for demo)
+document.getElementById('checkout-btn').addEventListener('click', () => {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+  alert("Thank you for your order! (Demo checkout)");
   cart = [];
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem('cart', JSON.stringify(cart));
   renderCart();
-  updateCartCounter();
-}
+});
 
-updateCartCounter();
+// Initial render
 renderCart();
 </script>
 
